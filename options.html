@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X.com Tags Manager</title>
+    <link rel="stylesheet" href="options.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </div>
+                    <div class="title-section">
+                        <h1>X.com Tags Manager</h1>
+                        <p class="subtitle">Управляйте своими любимыми авторами</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button id="exportBtn" class="action-btn secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                        </svg>
+                        Экспорт
+                    </button>
+                    <button id="importBtn" class="action-btn secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                        </svg>
+                        Импорт
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- Input Section -->
+                <section class="input-section">
+                    <div class="section-header">
+                        <h2>Добавить новый тег</h2>
+                        <p>Введите имя пользователя X.com для добавления в список</p>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-wrapper">
+                            <span class="input-prefix">@</span>
+                            <input type="text" id="tagInput" placeholder="username" maxlength="15">
+                        </div>
+                        <button id="addBtn" class="add-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                            </svg>
+                            Добавить
+                        </button>
+                    </div>
+                    <div class="input-tips">
+                        <p>💡 Советы:</p>
+                        <ul>
+                            <li>Можно вводить с @ или без него</li>
+                            <li>Теги автоматически сохраняются</li>
+                            <li>Максимум 15 символов в имени</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Tags Section -->
+                <section class="tags-section">
+                    <div class="section-header">
+                        <div class="header-left">
+                            <h2>Ваши теги</h2>
+                            <span id="tagCount" class="tag-count">0 тегов</span>
+                        </div>
+                        <div class="header-right">
+                            <button id="clearBtn" class="clear-btn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                                </svg>
+                                Очистить все
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="tagsContainer" class="tags-container">
+                        <!-- Tags will be dynamically added here -->
+                    </div>
+                </section>
+
+                <!-- Stats Section -->
+                <section class="stats-section">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">📊</div>
+                            <div class="stat-content">
+                                <h3>Всего тегов</h3>
+                                <p id="totalTags">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🎯</div>
+                            <div class="stat-content">
+                                <h3>Активных</h3>
+                                <p id="activeTags">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">💾</div>
+                            <div class="stat-content">
+                                <h3>Последнее обновление</h3>
+                                <p id="lastUpdate">Никогда</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Notification -->
+        <div id="notification" class="notification"></div>
+
+        <!-- Hidden file input for import -->
+        <input type="file" id="importFile" accept=".json" style="display: none;">
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html> 
