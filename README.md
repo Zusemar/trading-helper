@@ -1,4 +1,4 @@
-# X.com Tags Manager
+# X.com Tags Manager for axiom.trade
 
 Красивое браузерное расширение для управления и подсветки пользовательских тегов из X.com (Twitter).
 
